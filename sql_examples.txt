@@ -1,0 +1,29 @@
+<p>You have already seen some simple example queries in the Bottle tutorial,
+and how to run them from Python code.</p>
+<p>Note that the database automatically generates unique id values for all
+items, so you can use that to find a single item.</p>
+<p>Here is an example query you can use to retrieve all items:</p>
+<pre><span>      db.execute("SELECT id, brand, model, os, image, screensize FROM phones")
+    </span></pre>
+<p>This query is similar, but selects a single item, assuming you assigned the
+item's id to the corresponding variable:&nbsp;<code><br /></code></p>
+<pre><span>      db.execute("""SELECT id, brand, model, os, image, screensize
+                    FROM phones WHERE id=?""", (id,))
+    </span></pre>
+<p>Here is an example query you can use to update an item with a specific id,
+assuming that all fields are present in the
+Python<span>&nbsp;</span><span>dictionary</span><span>&nbsp;</span><code>item</code>:</p>
+<pre><span>      db.execute("""UPDATE phones
+                    SET brand=?, model=?, os=?, image=?,
+		    screensize=? WHERE id=?""",
+		    (item['brand'], item['model'], item['os'], item['image'], item['screensize'], item['id']))
+   </span> </pre>
+<p>Inserting a new item is even easier,
+as<span>&nbsp;</span><span>SQLite</span><span>&nbsp;</span>will generate the
+value of the id column for you:</p>
+<pre><span>      db.execute(""" INSERT INTO phones (brand, model, os, image, screensize)
+                VALUES (?, ?, ?, ?, ?)""",
+                (item['brand'], item['model'], item['os'], item['image'],  item['screensize']))
+    </span></pre>
+<p>Deleting an item with a given id:</p>
+<pre>     db.execute("DELETE FROM phones WHERE id=?", (id,))</pre>
