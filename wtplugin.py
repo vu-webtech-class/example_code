@@ -82,7 +82,7 @@ class WtDbPlugin(object):
                     VALUES ('Apple', 'iPhone X', 'IOS', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png', '5');
             INSERT INTO phones
                     (brand, model, os, image, screensize)
-                    VALUES ("Samsung", "Galaxy s8", "Android", "https://upload.wikimedia.org/wikipedia/commons/3/30/Galaxy-s8-plus_gallery_front_black_s4.png", "6");
+                    VALUES ("Samsung", "Galaxy s8", "Android", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samsung_Galaxy_S8_and_S8_Plus.png/569px-Samsung_Galaxy_S8_and_S8_Plus.png", "6");
             """);
             db.commit()
 
