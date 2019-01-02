@@ -2,8 +2,19 @@ Framework for Assignment 3: Web Technology at VU Amsterdam
 ==========================================================
 
 This is a template to help you getting started with implementing a RESTful API
-for Assignment 3. Read and try to understand the code in `server.py`.
+for Assignment 3. 
 
+You may download the three files `server.py`, `wtplugin.py` and `bottle.py`.
+
+Please read and try to understand the example code in `server.py`, 
+and see if you can make it run before you make any changes (see below).
+
+The `wtplugin.py` file is used by `server.py` and does not need to be changed by you. 
+It takes care of setting up your product database file and other stuff that you need to make your server run smoothly but are not part of the learning goals of this course.
+
+The `bottle.py` file contains the bottle framework and does not to be changed by you either.
+It is a straight copy from the bottle website, and is provided here so you do need to look for it your self.
+The exact version is https://github.com/bottlepy/bottle/blob/c8179b28d93b2875a31866c6b84a9b5b59c0c8b4/bottle.py
 
 Running the server
 ------------------
