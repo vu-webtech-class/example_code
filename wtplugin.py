@@ -4,10 +4,11 @@
 #
 # Install these plugins just before you call 'run()' with
 # 'install(WtDbPlugin())' and 'install(WtCorsPlugin())'.
+# This has already been done in the server.py example code!
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2014 VU University Amsterdam
+# Copyright (c) 2014-2019 VU University Amsterdam
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -45,7 +46,7 @@ class WtDbPlugin(object):
     api = 2
 
     # Configuration for database
-    dbfile = 'phones.db'
+    dbfile = 'inventory.db'
     keyword = 'db'
 
     def setup(self, app):
@@ -61,28 +62,26 @@ class WtDbPlugin(object):
     def setup_db(self, db):
         '''Setup database
 
-        Creates table 'phones' if not present
+        Creates table 'supermarket' if not present
         '''
         c = db.cursor()
 
         # Create table and insert one dummy item if table doesn't exist
-        c.execute("SELECT name FROM sqlite_master WHERE type='table' and name='phones'")
+        c.execute("SELECT name FROM sqlite_master WHERE type='table' and name='supermarket'")
         result = c.fetchone()
-        if not result or u'phones' not in result:
+        if not result or u'supermarket' not in result:
             c.executescript("""
-            CREATE TABLE IF NOT EXISTS phones
+            CREATE TABLE IF NOT EXISTS supermarket
                     (id INTEGER PRIMARY KEY,
-                     brand CHAR(100) NOT NULL,
-                     model CHAR(100) NOT NULL,
-                     os CHAR(10) NOT NULL,
+                     product CHAR(100) NOT NULL,
+                     origin CHAR(100) NOT NULL,
+                     amount INTEGER NOT NULL,
                      image char(254) NOT NULL,
-                     screensize INTEGER NOT NULL);
-            INSERT INTO phones
-                    (brand, model, os, image, screensize)
-                    VALUES ('Apple', 'iPhone X', 'IOS', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png', '5');
-            INSERT INTO phones
-                    (brand, model, os, image, screensize)
-                    VALUES ("Samsung", "Galaxy s8", "Android", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samsung_Galaxy_S8_and_S8_Plus.png/569px-Samsung_Galaxy_S8_and_S8_Plus.png", "6");
+                     best_before_date CHAR(12) NOT NULL);
+            INSERT INTO supermarket (product, origin, best_before_date, amount, image) VALUES
+                    ("Apples", "The Netherlands", "November 2019", "100kg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg");
+            INSERT INTO supermarket (product, origin, best_before_date, amount, image) VALUES
+                    ("Banana", "India", "February 2019", "120kg", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bananas.jpg/640px-Bananas.jpg");
             """);
             db.commit()
 

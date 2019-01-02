@@ -40,28 +40,28 @@ def hello_world():
 
 @get('/db-example')
 def db_example(db):
-    '''Responds with all Android phones in the database.
+    '''Responds with all Dutch products in the database.
 
     We added a parameter 'db' to your function to get a database cursor from
     WtPlugin. The parameter db is of type sqlite3.Cursor. Documentation is
     at https://docs.python.org/2/library/sqlite3.html#sqlite3.Cursor
 
-    If you want to start with a clean sheet, delete the file 'phones.db'.
+    If you want to start with a clean sheet, delete the file 'inventory.db'.
     It will be automatically re-created and filled with one example item.
 
     Access this route at http://localhost:8080/db-example
     '''
-    # Example SQL statement to select the name of all items located in A'dam
-    db.execute("SELECT * FROM phones WHERE os=?", ('Android',))
+    # Example SQL statement to select the name of all products from holland
+    db.execute("SELECT * FROM supermarket WHERE origin=?", ('The Netherlands',))
 
     # Get all results in a list of dictionaries that can be easily converted into JSON later
-    android_phones = db.fetchall() # Use db.fetchone() to get results one by one
+    products = db.fetchall() # Use db.fetchone() to get results one by one
 
-    # TODO: add code that checks for errors so you know what went wrong
-    # TODO: set the appropriate HTTP headers and HTTP response codes here.
+    # TODO: add code that checks for errors so you know what went wrong if anything went wrong
+    # TODO: set the appropriate HTTP response headers and HTTP response codes here.
 
     # Return results as JSON
-    return json.dumps(android_phones)
+    return json.dumps(products)
 
 
 
