@@ -104,7 +104,7 @@ class WtDbPlugin(object):
             try:
                 rv = callback(*args, **kwargs)
                 db.commit()
-            except sqlite3.IntegrityError, e:
+            except sqlite3.IntegrityError as e:
                 db.rollback()
                 raise HTTPError(500, "Database Error", e)
             finally:
