@@ -23,6 +23,7 @@
 // We are going to use the variable "db' to communicate to the database:
 // If you want to start with a clean sheet, delete the file 'phones.db'.
 // It will be automatically re-created and filled with one example item.
+
 const sqlite = require('sqlite3').verbose();
 let db = my_database('./phones.db');
 
@@ -31,6 +32,7 @@ let db = my_database('./phones.db');
 // defining routes.
 //
 // First, create an express application `app`:
+
 var express = require("express");
 var app = express();
 
@@ -41,8 +43,9 @@ var app = express();
 //       everything works.
 // ###############################################################################
 
-// This route responds to http://localhost:3000/hello with an example JSON object.
+// This example route responds to http://localhost:3000/hello with an example JSON object.
 // Please test if this works on your own device before you make any changes.
+
 app.get("/hello", function(req, res) {
     response_body = {'Hello': 'World'} ;
 
@@ -63,7 +66,7 @@ app.get('/db-example', function(req, res) {
     	// TODO: add code that checks for errors so you know what went wrong if anything went wrong
     	// TODO: set the appropriate HTTP response headers and HTTP response codes here.
 
-    	// # Return response as JSON
+    	// # Return db response as JSON
     	return res.json(rows)
     });
 });
