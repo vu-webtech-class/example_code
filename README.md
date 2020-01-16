@@ -15,13 +15,16 @@ Running the server
 You can start the server by executing the Python script:
 
 ```
-$ python server.py
+$ node server.js
 ```
 
-This starts a server at [http://localhost:3000/](http://localhost:3000/). You can verify this with a
+This starts a server responding to 
+[http://localhost:3000/hello](http://localhost:3000/hello) and
+[http://localhost:3000/db-example](http://localhost:3000/db-example). 
+You can verify this with a
 browser or a REST client such as `Postman` or `curl`.
 
-Your server restarts automatically everytime you save the file `server.js`. 
+
 
 Accessing the database
 ----------------------
