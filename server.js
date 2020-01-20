@@ -96,7 +96,7 @@ function my_database(filename) {
         	image 	CHAR(254) NOT NULL,
         	screensize INTEGER NOT NULL
         	)`);
-		db.all(`select count(1) as count where exists (select * from phones)`, function(err, result) {
+		db.all(`select count(*) as count from phones`, function(err, result) {
 			if (result[0].count == 0) {
 				db.run(`INSERT INTO phones (brand, model, os, image, screensize) VALUES (?, ?, ?, ?, ?)`,
 				["Fairfone", "FP3", "Android", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Fairphone_3_modules_on_display.jpg/320px-Fairphone_3_modules_on_display.jpg", "5.65"]);
