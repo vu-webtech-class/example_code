@@ -5,7 +5,7 @@ This is a template to help you getting started with implementing a RESTful API
 for Assignment 3. You are advised to:
 * make a new folder for Assignment 3
 * download the file `server.js` into this folder
-* make sure you have the sqlite and express modules installed 
+* make sure you have the sqlite and express modules installed:
 
 ```bash
 $ npm install sqlite express
