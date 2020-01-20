@@ -5,7 +5,11 @@ This is a template to help you getting started with implementing a RESTful API
 for Assignment 3. You are advised to:
 * make a new folder for Assignment 3
 * download the file `server.js` into this folder
-* make sure you have the sqlite and express modules installed (npm install sqlite express)
+* make sure you have the sqlite and express modules installed 
+
+```bash
+$ npm install sqlite express
+```
 
 Please read and try to understand the example code in `server.js`, 
 and see if you can make it run before you make any changes (see below).
