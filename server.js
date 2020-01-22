@@ -19,7 +19,7 @@
 // ###############################################################################
 //
 // Database setup:
-// First: Open sqlite database file, create if not exists already.
+// First: Our code will open a sqlite database file for you, and create one if it not exists already.
 // We are going to use the variable "db' to communicate to the database:
 // If you want to start with a clean sheet, delete the file 'phones.db'.
 // It will be automatically re-created and filled with one example item.
@@ -35,6 +35,11 @@ let db = my_database('./phones.db');
 
 var express = require("express");
 var app = express();
+
+// We need some middleware to parse JSON data in the body of our HTTP requests:
+var bodyParser = require("body-parser");
+app.use(bodyParser.json());
+
 
 // ###############################################################################
 // Routes
@@ -70,10 +75,18 @@ app.get('/db-example', function(req, res) {
     });
 });
 
+app.post('/post-example', function(req, res) {
+	// This is just to check if there is any data posted in the body of the HTTP request:
+	console.log(req.body);
+	return res.json(req.body);
+});
+
+
 // ###############################################################################
 // This should start the server, after the routes have been defined, at port 3000:
 
 app.listen(3000);
+console.log("Your Web server should be up and running, waiting for requests to come in. Try http://localhost:3000/hello");
 
 // ###############################################################################
 // Some helper functions called above
