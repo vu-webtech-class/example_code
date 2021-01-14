@@ -65,7 +65,7 @@ app.get("/hello", function(req, res) {
 // Please test if this works on your own device before you make any changes.
 app.get('/db-example', function(req, res) {
     // Example SQL statement to select the name of all products from a specific brand
-    db.all(`SELECT * FROM products WHERE brand=?`, ['Fairphone'], function(err, rows) {
+    db.all(`SELECT * FROM products WHERE product=?`, ['Apples'], function(err, rows) {
 
     	// TODO: add code that checks for errors so you know what went wrong if anything went wrong
     	// TODO: set the appropriate HTTP response headers and HTTP response codes here.
@@ -96,9 +96,9 @@ function my_database(filename) {
   		if (err) {
 			console.error(err.message);
   		}
-  		console.log('Connected to the phones database.');
+  		console.log('Connected to the products database.');
 	});
-	// Create our phones table if it does not exist already:
+	// Create our products table if it does not exist already:
 	db.serialize(() => {
 		db.run(`
         	CREATE TABLE IF NOT EXISTS products
