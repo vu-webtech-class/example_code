@@ -2,7 +2,7 @@
 // Web Technology at VU University Amsterdam
 // Assignment 3
 //
-// The assignment description is available on Canvas. 
+// The assignment description is available on Canvas.
 // Please read it carefully before you proceed.
 //
 // This is a template for you to quickly get started with Assignment 3.
@@ -21,11 +21,11 @@
 // Database setup:
 // First: Our code will open a sqlite database file for you, and create one if it not exists already.
 // We are going to use the variable "db' to communicate to the database:
-// If you want to start with a clean sheet, delete the file 'phones.db'.
+// If you want to start with a clean sheet, delete the file 'products.db'.
 // It will be automatically re-created and filled with one example item.
 
 const sqlite = require('sqlite3').verbose();
-let db = my_database('./phones.db');
+let db = my_database('./products.db');
 
 // ###############################################################################
 // The database should be OK by now. Let's setup the Web server so we can start
@@ -43,7 +43,7 @@ app.use(bodyParser.json());
 
 // ###############################################################################
 // Routes
-// 
+//
 // TODO: Add your routes here and remove the example routes once you know how
 //       everything works.
 // ###############################################################################
@@ -65,8 +65,8 @@ app.get("/hello", function(req, res) {
 // Please test if this works on your own device before you make any changes.
 app.get('/db-example', function(req, res) {
     // Example SQL statement to select the name of all products from a specific brand
-    db.all(`SELECT * FROM phones WHERE brand=?`, ['Fairphone'], function(err, rows) {
-	
+    db.all(`SELECT * FROM products WHERE brand=?`, ['Fairphone'], function(err, rows) {
+
     	// TODO: add code that checks for errors so you know what went wrong if anything went wrong
     	// TODO: set the appropriate HTTP response headers and HTTP response codes here.
 
@@ -101,19 +101,19 @@ function my_database(filename) {
 	// Create our phones table if it does not exist already:
 	db.serialize(() => {
 		db.run(`
-        	CREATE TABLE IF NOT EXISTS phones
-        	(id 	INTEGER PRIMARY KEY,
-        	brand	CHAR(100) NOT NULL,
-        	model 	CHAR(100) NOT NULL,
-        	os 	CHAR(10) NOT NULL,
-        	image 	CHAR(254) NOT NULL,
-        	screensize INTEGER NOT NULL
+        	CREATE TABLE IF NOT EXISTS products
+        	(id 	  INTEGER PRIMARY KEY,
+        	product	CHAR(100) NOT NULL,
+        	origin 	CHAR(100) NOT NULL,
+        	best_before_date 	CHAR(20) NOT NULL,
+          amount  CHAR(20) NOT NULL,
+        	image   CHAR(254) NOT NULL
         	)`);
-		db.all(`select count(*) as count from phones`, function(err, result) {
+		db.all(`select count(*) as count from products`, function(err, result) {
 			if (result[0].count == 0) {
-				db.run(`INSERT INTO phones (brand, model, os, image, screensize) VALUES (?, ?, ?, ?, ?)`,
-				["Fairphone", "FP3", "Android", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Fairphone_3_modules_on_display.jpg/320px-Fairphone_3_modules_on_display.jpg", "5.65"]);
-				console.log('Inserted dummy phone entry into empty database');
+				db.run(`INSERT INTO products (product, origin, best_before_date, amount, image) VALUES (?, ?, ?, ?, ?)`,
+				["Apples", "The Netherlands", "November 2019", "100kg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg"]);
+				console.log('Inserted dummy Apples entry into empty product database');
 			} else {
 				console.log("Database already contains", result[0].count, " item(s) at startup.");
 			}

@@ -11,7 +11,7 @@ for Assignment 3. You are advised to:
 $ npm install sqlite express body-parser
 ```
 
-Please read and try to understand the example code in `server.js`, 
+Please read and try to understand the example code in `server.js`,
 and see if you can make it run before you make any changes (see below).
 
 Running the server
@@ -23,9 +23,9 @@ You can start the server on a command line (Terminal, Powershell) by executing:
 $ node server.js
 ```
 
-This starts a server responding to 
+This starts a server responding to
 [http://localhost:3000/hello](http://localhost:3000/hello) and
-[http://localhost:3000/db-example](http://localhost:3000/db-example). 
+[http://localhost:3000/db-example](http://localhost:3000/db-example).
 You can verify this with a
 browser or better: a REST client such as `Postman` (see zyBook 9.9 developer tools) or `curl`.
 
@@ -33,7 +33,7 @@ browser or better: a REST client such as `Postman` (see zyBook 9.9 developer too
 Accessing the database
 ----------------------
 
-The server automatically creates an SQLite database table 'phones' in the file `phones.db`, with one example entry for testing purposes.
+The server automatically creates an SQLite database table 'products' in the file `products.db`, with one example entry for testing purposes.
 This file is re-created whenever you delete it, and restart the server.
 
 Using the db object, you can execute SQL queries and retrieve results. Have a look at the [documentation
@@ -45,4 +45,3 @@ Your task
 
 Now it's up to you to fill in the missing bits and pieces according to the design of your API
 by adding appropriate routes. Also use the examples in the zyBook to create a package.json file that defines how to easily start and test your server.
-
