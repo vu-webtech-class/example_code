@@ -14,6 +14,10 @@
 //
 // Once you are familiar with Node.js and the assignment, start implementing
 // an API according to your design by adding routes.
+//
+// Make sure you have the required modules installed:
+//
+// shell> npm install sqlite3 express body-parser
 
 
 // ###############################################################################
