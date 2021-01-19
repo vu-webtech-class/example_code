@@ -17,7 +17,7 @@
 //
 // Make sure you have the required modules installed:
 //
-// shell> npm install sqlite3 express body-parser
+// shell> npm install sqlite3@5.0.0 express body-parser
 
 
 // ###############################################################################

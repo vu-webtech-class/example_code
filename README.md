@@ -8,7 +8,7 @@ for Assignment 3. You are advised to:
 * make sure you have the sqlite3, express and body-parser modules installed:
 
 ```bash
-$ npm install sqlite3 express body-parser
+$ npm install sqlite3@5.0.0 express body-parser
 ```
 
 Please read and try to understand the example code in `server.js`,
