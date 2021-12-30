@@ -27,7 +27,7 @@ This starts a server responding to
 [http://localhost:3000/hello](http://localhost:3000/hello) and
 [http://localhost:3000/db-example](http://localhost:3000/db-example). 
 You can verify this with a
-browser or better: a REST client such as `Postman` (see zyBook 9.9 developer tools) or `curl`.
+browser or better: a REST client such as `Postman` (see zyBook 9.11 developer tools) or `curl`.
 
 
 Accessing the database
