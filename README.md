@@ -8,7 +8,7 @@ for Assignment 3. You are advised to:
 * make sure you have the sqlite3, express and body-parser modules installed:
 
 ```bash
-$ npm install sqlite3@5.0.0 express body-parser
+$ npm install sqlite3@4.2.0 express body-parser
 ```
 
 Please read and try to understand the example code in `server.js`,
@@ -26,9 +26,8 @@ $ node server.js
 This starts a server responding to
 [http://localhost:3000/hello](http://localhost:3000/hello) and
 [http://localhost:3000/db-example](http://localhost:3000/db-example).
-You can verify this with a browser.
-
-Note that you need a REST client such as [`Postman`](https://learning.postman.com/) or `curl` to test HTTP methods other than GET!
+You can verify this with a
+browser or better: a REST client such as `Postman` (see zyBook 9.11 developer tools) or `curl`.
 
 
 Accessing the database
