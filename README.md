@@ -8,7 +8,7 @@ for Assignment 3. You are advised to:
 * make sure you have the sqlite3, express and body-parser modules installed:
 
 ```bash
-$ npm install sqlite3@4.2.0 express body-parser
+$ npm install sqlite3@5.1.2 express body-parser
 ```
 
 Please read and try to understand the example code in `server.js`, 
@@ -27,13 +27,13 @@ This starts a server responding to
 [http://localhost:3000/hello](http://localhost:3000/hello) and
 [http://localhost:3000/db-example](http://localhost:3000/db-example). 
 You can verify this with a
-browser or better: a REST client such as `Postman` (see zyBook 9.11 developer tools) or `curl`.
+browser or better: a REST client such as `Postman` (see zyBook 10.11 developer tools) or `curl`.
 
 
 Accessing the database
 ----------------------
 
-The server automatically creates an SQLite database table 'phones' in the file `phones.db`, with one example entry for testing purposes.
+The server automatically creates an SQLite database table 'gallery' in the file `gallery.db`, with example entries for testing purposes.
 This file is re-created whenever you delete it, and restart the server.
 
 Using the db object, you can execute SQL queries and retrieve results. Have a look at the [documentation
