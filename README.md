@@ -8,7 +8,7 @@ for Assignment 3. You are advised to:
 * make sure you have the sqlite3, express and body-parser modules installed:
 
 ```bash
-$ npm install sqlite3@5.1.2 express body-parser
+$ npm install sqlite3@5.1.2 express
 ```
 
 Please read and try to understand the example code in `server.js`, 
@@ -20,7 +20,7 @@ Running the server
 You can start the server on a command line (Terminal, Powershell) by executing:
 
 ```
-$ node server.js
+$ npm start
 ```
 
 This starts a server responding to 
@@ -45,4 +45,3 @@ Your task
 
 Now it's up to you to fill in the missing bits and pieces according to the design of your API
 by adding appropriate routes. Also use the examples in the zyBook to create a package.json file that defines how to easily start and test your server.
-

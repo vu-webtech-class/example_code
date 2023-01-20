@@ -37,8 +37,7 @@ var express = require("express");
 var app = express();
 
 // We need some middleware to parse JSON data in the body of our HTTP requests:
-var bodyParser = require("body-parser");
-app.use(bodyParser.json());
+app.use(express.json());
 
 
 // ###############################################################################
