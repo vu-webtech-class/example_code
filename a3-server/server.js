@@ -47,6 +47,7 @@ app.use(express.json());
 
 // This example route responds to http://localhost:3000/hello with an example JSON object.
 // Please test if this works on your own device before you make any changes.
+// Do not remove this endpoint as it is used for codegrade evaluation.
 
 app.get("/hello", function (req, res) {
   response_body = { Hello: "World" };

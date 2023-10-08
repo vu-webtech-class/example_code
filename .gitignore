@@ -106,3 +106,4 @@ dist
 # Additions
 *.db
 *.zip
+package-lock.json
