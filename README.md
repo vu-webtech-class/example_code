@@ -43,7 +43,7 @@ browser or better: a REST client such as `Postman` (see zyBook 10.11 developer t
 
 ### Accessing the database
 
-The server automatically creates an SQLite database table 'gallery' in the file `gallery.db`, with example entries for testing purposes.
+The server automatically creates an SQLite database table 'media' in the file `media.db`, with example entries for testing purposes.
 This file is re-created whenever you delete it, and restart the server.
 
 Using the db object, you can execute SQL queries and retrieve results. Have a look at the [documentation
