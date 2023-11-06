@@ -11,7 +11,7 @@ a3_zip := a3-lab${labNumberPadded}.zip
 
 A1_FILES := a1-markup/index.html a1-markup/style.css a1-markup/report.md
 A2_FILES := a2-scripting
-A3_FILES := a3-server --exclude=a3-server/node_modules/* --exclude=a3-server/package-lock.json --exclude=a3-server/gallery.db
+A3_FILES := a3-server --exclude=a3-server/node_modules/* --exclude=a3-server/package-lock.json --exclude=a3-server/media.db
 
 # Default target: specify the target you want to build when you run just "make"
 all: a1 a2 a3
