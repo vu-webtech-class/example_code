@@ -76,7 +76,7 @@ app.get("/db-example", function (req, res) {
 });
 
 app.post("/post-example", function (req, res) {
-  // This is just to check if there is any data posted in the body of the HTTP request:
+  // This is just so you may check if there is any data posted in the body of the HTTP request:
   console.log(req.body);
   return res.json(req.body);
 });
@@ -120,7 +120,7 @@ function my_database(filename) {
             "Arcane",
             "2021",
             "animation, action, adventure, tv-show",
-            "https://www.nerdpool.it/wp-content/uploads/2021/11/poster-arcane.jpg",
+            "https://pbs.twimg.com/media/GcMIc3WXcAI_MNJ?format=jpg&name=small",
             "Set in Utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic League Of Legends champions and the power that will tear them apart.",
             ]
         );
