@@ -1,6 +1,6 @@
 Framework for Assignments: Web Technology at VU Amsterdam
 ==========================================================
-This is a template to be used for each assignment during the course. For details on the assignments and their requirements, see the [canvas page](https://canvas.vu.nl/courses/78523). 
+This is a template to be used for each assignment during the course. For details on the assignments and their requirements, see the [canvas page](https://canvas.vu.nl/courses/83680). 
 
 ## Submission
 In order to submit, you need to create a zip file of each stage in your project. To do this, we have a basic Makefile that you can use.
